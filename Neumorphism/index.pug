@@ -1,0 +1,59 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    title Neumorphic UI Kit
+    link(rel="stylesheet" href="style.css")
+    link(href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet")
+
+  body
+    main.stage
+      header.header
+        h1 Neumorphic 
+        p.subtitle Precision-engineered Soft UI component pack.
+
+      .grid
+        //- Standard Buttons
+        section.card
+          h2 Push Buttons
+          .flex-row
+            button.nm-btn.nm-btn--primary
+              span Action
+            button.nm-btn.active
+              span Pressed
+            button.nm-btn.nm-btn--danger
+              span Delete
+
+        //- Icon Buttons
+        section.card
+          h2 Icon Geometry
+          .flex-row
+            button.nm-btn.nm-btn--circle
+              i.icon ⚡
+            button.nm-btn.nm-btn--square.active
+              i.icon ⚙️
+            button.nm-btn.nm-btn--circle
+              i.icon 🔔
+
+        //- Toggles & Switches
+        section.card
+          h2 State Controls
+          .flex-row
+            .nm-switch
+              input(type="checkbox" id="sw1")
+              label(for="sw1").nm-switch-label
+            
+            .nm-toggle-group
+              button.nm-toggle-btn.active Day
+              button.nm-toggle-btn Night
+
+        //- Inputs & Sliders
+        section.card
+          h2 Form Elements
+          .nm-input-wrapper
+            input.nm-input(type="text" placeholder="Search components...")
+          .nm-range-container
+            input.nm-range(type="range" min="0" max="100" value="70")
+
+    script(src="script.js")
