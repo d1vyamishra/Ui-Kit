@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tactile Essence UI Kit</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Theme Toggle -->
+<button class="skeuo skeuo-btn theme-toggle-btn" id="theme-toggle" aria-label="Toggle Mode">
+  <span class="icon-light">☀️</span>
+  <span class="icon-dark">🌙</span>
+</button>
+
+<main class="page">
+  <!-- HERO -->
+  <header class="hero">
+    <span class="hero__kicker">Pure CSS · Skeuomorphic · Tactile</span>
+    <h1 class="hero__title">Tactile Essence</h1>
+    <p class="hero__sub">
+      A physical design system featuring high-depth components, 12 spring animations, and WCAG AA compliant contrast.
+    </p>
+
+    <div class="hero__cta">
+      <a href="#components" class="skeuo skeuo-btn skeuo-btn--primary">Explore Tactile UI</a>
+      <a href="https://github.com" class="skeuo skeuo-btn skeuo-btn--ghost">Documentation</a>
+    </div>
+  </header>
+
+  <div class="container" id="components">
+    
+    <!-- CARDS -->
+    <section class="section">
+      <div class="section__header">
+        <h2 class="section__title">Tactile Slabs</h2>
+        <span class="section__subtitle">Physical surfaces</span>
+      </div>
+      <div class="card-grid">
+        <div class="skeuo skeuo-card">
+          <div class="skeuo-card__label">Plate 01</div>
+          <h3 class="skeuo-card__title">Raised Surface</h3>
+          <p class="skeuo-card__body">Utilizing dual-light-source shadows to create the illusion of physical elevation.</p>
+          <div class="btn-row" style="margin-top:20px">
+             <span class="skeuo-badge skeuo-badge--success">Online</span>
+          </div>
+        </div>
+
+        <div class="skeuo skeuo-card skeuo-card--inset">
+          <div class="skeuo-card__label">Plate 02</div>
+          <h3 class="skeuo-card__title">Etched Well</h3>
+          <p class="skeuo-card__body">Inner shadows create a "well" effect, perfect for grouping sub-elements or inputs.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- BUTTONS -->
+    <section class="section">
+      <div class="section__header">
+        <h2 class="section__title">Mechanical Buttons</h2>
+        <span class="section__subtitle">Click to feel the travel</span>
+      </div>
+      <div class="btn-row">
+        <button class="skeuo skeuo-btn skeuo-btn--primary">Primary Push</button>
+        <button class="skeuo skeuo-btn">Standard Toggle</button>
+        <button class="skeuo skeuo-btn skeuo-btn--danger">Danger Switch</button>
+        <button class="skeuo skeuo-btn" disabled>Locked</button>
+      </div>
+    </section>
+
+    <!-- FORM CONTROLS -->
+    <section class="section">
+      <div class="section__header">
+        <h2 class="section__title">Control Panel</h2>
+        <span class="section__subtitle">Tactile Inputs</span>
+      </div>
+      <div class="skeuo skeuo-card" style="max-width: 600px;">
+        <div class="form-group">
+          <label>Device Name</label>
+          <input type="text" class="skeuo skeuo-input" placeholder="Enter name...">
+        </div>
+        
+        <div class="btn-row" style="margin-top:24px">
+          <label class="skeuo-switch">
+            <input type="checkbox" checked>
+            <span class="skeuo-switch__slider"></span>
+            System Power
+          </label>
+
+          <div class="skeuo-check-group">
+            <label class="skeuo-checkbox">
+              <input type="checkbox" checked>
+              <span class="skeuo-checkbox__box"></span>
+              Auto-Sync
+            </label>
+          </div>
+        </div>
+
+        <div class="form-group" style="margin-top:24px">
+          <label>Signal Intensity</label>
+          <input type="range" class="skeuo-range">
+        </div>
+      </div>
+    </section>
+
+  </div>
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
