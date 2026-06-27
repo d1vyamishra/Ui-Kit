@@ -1,0 +1,190 @@
+/* style.css */
+:root {
+    /* Design Tokens */
+    --bg-color: #e0e5ec;
+    --card-color: #e0e5ec;
+    --text-color: #44475a;
+    --primary-color: #4a90e2;
+    --danger-color: #e24a4a;
+    
+    /* Shadows - The Secret Sauce */
+    --shadow-out: 9px 9px 16px rgb(163,177,198, 0.6), 
+                  -9px -9px 16px rgba(255,255,255, 0.5);
+    --shadow-in: inset 6px 6px 12px rgba(163,177,198, 0.6), 
+                 inset -6px -6px 12px rgba(255,255,255, 0.5);
+    --shadow-btn-hover: 4px 4px 8px rgb(163,177,198, 0.6), 
+                        -4px -4px 8px rgba(255,255,255, 0.5);
+
+    --radius-md: 16px;
+    --radius-lg: 24px;
+    --transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+[data-theme="dark"] {
+    --bg-color: #2d3436;
+    --card-color: #2d3436;
+    --text-color: #dfe6e9;
+    --shadow-out: 9px 9px 16px rgba(0,0,0, 0.4), 
+                  -9px -9px 16px rgba(255,255,255, 0.05);
+    --shadow-in: inset 6px 6px 12px rgba(0,0,0, 0.4), 
+                 inset -6px -6px 12px rgba(255,255,255, 0.05);
+    --shadow-btn-hover: 4px 4px 8px rgba(0,0,0, 0.4), 
+                        -4px -4px 8px rgba(255,255,255, 0.05);
+}
+
+/* Base Styles */
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: 'Inter', system-ui, sans-serif;
+    transition: background 0.3s ease;
+    line-height: 1.6;
+}
+
+.container { width: min(1100px, 92vw); margin: 0 auto; }
+
+/* Components */
+
+/* --- Card --- */
+.skeuo-card {
+    background: var(--card-color);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-out);
+    padding: 2rem;
+    border: 1px solid rgba(255,255,255, 0.1);
+    transition: var(--transition);
+}
+
+.skeuo-card--inset {
+    box-shadow: var(--shadow-in);
+}
+
+/* --- Buttons --- */
+.skeuo-btn {
+    background: var(--card-color);
+    border: none;
+    border-radius: 12px;
+    box-shadow: var(--shadow-out);
+    padding: 12px 24px;
+    color: var(--text-color);
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    outline: none;
+}
+
+.skeuo-btn:hover {
+    box-shadow: var(--shadow-btn-hover);
+    transform: translateY(-2px);
+}
+
+.skeuo-btn:active {
+    box-shadow: var(--shadow-in);
+    transform: translateY(0);
+}
+
+.skeuo-btn--primary {
+    color: var(--primary-color);
+}
+
+.skeuo-btn--danger {
+    color: var(--danger-color);
+}
+
+/* --- Inputs --- */
+.skeuo-input {
+    width: 100%;
+    background: var(--card-color);
+    border: none;
+    border-radius: 10px;
+    box-shadow: var(--shadow-in);
+    padding: 14px 18px;
+    color: var(--text-color);
+    outline: none;
+    font-size: 1rem;
+}
+
+/* --- Toggle Switch --- */
+.skeuo-switch {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    cursor: pointer;
+}
+
+.skeuo-switch input { display: none; }
+
+.skeuo-switch__slider {
+    width: 50px;
+    height: 26px;
+    background: var(--card-color);
+    border-radius: 20px;
+    box-shadow: var(--shadow-in);
+    position: relative;
+    transition: 0.3s;
+}
+
+.skeuo-switch__slider::before {
+    content: "";
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    background: #a3b1c6;
+    border-radius: 50%;
+    top: 4px;
+    left: 4px;
+    box-shadow: var(--shadow-out);
+    transition: 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.skeuo-switch input:checked + .skeuo-switch__slider::before {
+    transform: translateX(24px);
+    background: var(--primary-color);
+}
+
+/* --- Range Slider --- */
+.skeuo-range {
+    -webkit-appearance: none;
+    width: 100%;
+    background: transparent;
+}
+
+.skeuo-range::-webkit-slider-runnable-track {
+    height: 10px;
+    background: var(--card-color);
+    box-shadow: var(--shadow-in);
+    border-radius: 5px;
+}
+
+.skeuo-range::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    height: 24px;
+    width: 24px;
+    background: var(--card-color);
+    border-radius: 50%;
+    box-shadow: var(--shadow-out);
+    margin-top: -7px;
+    cursor: pointer;
+}
+
+/* Layout helpers */
+.hero { text-align: center; padding: 100px 20px; }
+.hero__title { font-size: 4rem; font-weight: 900; margin: 10px 0; }
+.card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 40px;}
+.btn-row { display: flex; gap: 15px; flex-wrap: wrap; align-items: center;}
+.form-group label { display: block; margin-bottom: 8px; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; opacity: 0.7; }
+.section { padding: 60px 0; border-bottom: 1px solid rgba(0,0,0,0.05); }
+
+/* Theme Toggle Button Position */
+.theme-toggle-btn {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 100;
+}
+
+[data-theme="dark"] .icon-light { display: none; }
+[data-theme="light"] .icon-dark { display: none; }
